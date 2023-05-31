@@ -1,3 +1,5 @@
+package by.teachmeskills.c67.homework.task_01;
+
 public class Task03 {
     public static void main(String[] args) {
         int b = 831;
