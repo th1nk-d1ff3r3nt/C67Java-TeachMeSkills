@@ -7,17 +7,22 @@ import java.util.regex.Pattern;
 public class Task_01 {
     private static String findABBR(String[] strArr) {
         StringBuilder sb = new StringBuilder();
+        boolean sbIsEmpty = true;
         Pattern pattern = Pattern.compile("^[A-Z]{2,6}$");
         for (String value : strArr) {
             Matcher matcher = pattern.matcher(value);
             if (matcher.matches()) {
                 sb.append(value);
                 sb.append(" ");
-            } else {
-                sb.append("No abbreviations found!");
+                sbIsEmpty = false;
             }
         }
-        return sb.toString();
+        if (sbIsEmpty) {
+            sb.append("No abbreviations found!");
+            return sb.toString();
+        } else {
+            return sb.toString();
+        }
     }
 
     public static void main(String[] args) {
